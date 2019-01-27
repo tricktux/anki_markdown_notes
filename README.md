@@ -23,9 +23,8 @@ This is an [Anki](https://apps.ankiweb.net/) [add-on](https://ankiweb.net/shared
 
 ## Installation
 
-To download and install directly from [Ankiweb](https://ankiweb.net/shared/info/2141874715), please copy and paste the following code into the desktop program: 2141874715
-
-Alternatively, open your add-ons folder by selecting "Tools -> Add-Ons -> Open Add-Ons Folder" and simply paste the [anki-markdown.py](https://github.com/Pradhyo/anki-markdown-notes/blob/master/anki-markdown.py) file into it.
+- Open your add-ons folder by selecting `Tools -> Add-Ons -> Open Add-Ons Folder`
+- Create folder `anki_markdown_notes` and copy file [__init__.py](https://raw.githubusercontent.com/rmolin88/anki_markdown_notes/master/__init__.py) into it.
 
 ## Usage
 
@@ -78,8 +77,6 @@ A: - Answer line 1
 - Answer line 2
 ```
 
-Sample Notes are in the **[Notes](https://github.com/Pradhyo/anki-markdown-notes/tree/master/Notes)** folder.
-
 ## Development
-All the code is in the single **[anki-markdown.py](https://github.com/Pradhyo/anki-markdown-notes/blob/master/anki-markdown.py)** file.
+All the code is in the single [__init__.py](https://raw.githubusercontent.com/rmolin88/anki_markdown_notes/master/__init__.py) file.
 Going through the [docs](https://apps.ankiweb.net/docs/addons.html) first is highly recommended. In the markdown files, id comments are added as soon as a note is imported successfully into anki - this will ensure any changes to the note in the markdown file edits the same anki note.
