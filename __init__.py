@@ -241,6 +241,8 @@ def delete_notes(existing_notes_ids):
     Deletes notes in Anki that aren't in the passed list of
     `existing_notes_ids`
     """
+    logger = logging.getLogger("Anki Markdown Notes Log")
+    logger.debug('[delete_notes]: note_id: "%s"', existing_notes_ids)
     notes_to_delete = set()
     num_deleted = 0
     all_decks = mw.col.decks.allNames()
@@ -251,6 +253,8 @@ def delete_notes(existing_notes_ids):
                 notes_to_delete.add(cid)
                 num_deleted += 1
 
+    logger.debug('[delete_notes]: num_deleted = %d', num_deleted)
+    logger.debug('[delete_notes]: notes_to_delete = %s', notes_to_delete)
     mw.col.remNotes(notes_to_delete)
     return num_deleted
 
@@ -323,7 +327,7 @@ def import_notes_ui():
         showInfo("Notes handled in each deck - " + str(deck_counter))
 
 
-def expoort_notes_ui():
+def export_notes_ui():
     """
     Lets user pick a directory and exports Notes to it.
     """
@@ -339,7 +343,7 @@ def expoort_notes_ui():
 init_log()
 
 export_action = QAction("Export to Markdown Notes", mw)
-export_action.triggered.connect(expoort_notes_ui)
+export_action.triggered.connect(export_notes_ui)
 mw.form.menuTools.addAction(export_action)
 
 import_action = QAction("Import from Markdown Notes", mw)
